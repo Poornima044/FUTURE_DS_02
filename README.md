@@ -123,7 +123,7 @@ Facebook-Ads-Performance-Dashboard/
 ---
 
 ## 📸 Dashboard Preview
-![Dashboard Preview](https://github.com/Poornima044/FUTURE_DS_02/blob/main/screenshots/dashboard_preview.png)
+![Dashboard Preview](https://github.com/Poornima044/FUTURE_DS_02/blob/main/Screenshot%20image.png)
 
 ---
 
