@@ -108,6 +108,7 @@ The dashboard includes the following key visuals:
 
 ---
 
+## 📂 Project Structure
 Facebook-Ads-Performance-Dashboard/
 ├── README.md
 ├── data/
@@ -132,7 +133,3 @@ Facebook-Ads-Performance-Dashboard/
 🌐 [LinkedIn](linkedin.com/in/contact-poornima) | 🧠 Aspiring Data Analyst | 📊 Power BI Enthusiast  
 📍 *Task 2 – Data Science & Analytics Internship @ Future Interns*  
 
-
-
-
-## 📂 Project Structure
