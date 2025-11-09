@@ -1,125 +1,138 @@
-# 📈 Social Media Campaign Performance Tracker – Power BI Project
-**Task 02 – Data Science & Analytics Internship by Future Interns**
+# 📊 Facebook Ads Campaign Performance Dashboard (2017)
+
+**Project by Poornima | Task 2 – Data Science & Analytics Internship @ Future Interns**
 
 ---
 
 ## 📄 Project Overview
-This project focuses on analyzing **Facebook Ads campaign performance** to measure marketing effectiveness and identify opportunities for improvement.  
+This project analyzes a **Facebook Ads Campaign dataset** to measure ad performance and marketing effectiveness using **Power BI**.  
+The dashboard provides key insights into campaign spend, engagement, and return on investment — helping marketers optimize ad strategy based on data-driven evidence.
 
-The goal is to help marketing teams and decision-makers understand:
-- Which campaigns are driving the highest engagement 📊  
-- How ad spend translates into performance metrics 💰  
-- Which demographics or ad types deliver the best ROI 🚀  
-
-The final output is an **interactive Power BI dashboard** that visualizes key KPIs such as CTR, CPC, and ROI.
+The dataset captures ad performance data such as impressions, clicks, conversions, spend, and demographic details (age, gender).
 
 ---
 
 ## 🎯 Objectives
-- Analyze Facebook ad campaign data to evaluate performance  
-- Track metrics like Impressions, Clicks, CTR, CPC, and ROI  
-- Identify high-performing campaigns, audiences, and ad creatives  
-- Present actionable insights and recommendations through Power BI  
+- Clean and transform raw CSV ad data in Power BI.  
+- Analyze key digital marketing metrics:
+  - Click-Through Rate (CTR)
+  - Cost per Click (CPC)
+  - Total Spend & ROI (%)
+  - Conversion Analysis
+- Build an interactive Power BI dashboard for campaign performance tracking.
+- Present insights and recommendations for ad optimization.
 
 ---
 
 ## 🧩 Dataset Description
 **Dataset Name:** Facebook Ads Performance Dataset  
-**Source:** Kaggle  
-**File Format:** `.csv`  
+**Source:** [Kaggle – Facebook Ad Campaign Dataset](https://www.kaggle.com/)  
+**File Format:** `.csv`
 
-**About the Data:**  
-The dataset contains detailed information on ad performance metrics such as impressions, reach, clicks, conversions, and ad spend across multiple campaigns.
+**Columns used:**
 
 | Column Name | Description |
-|-------------:|-------------|
-| Campaign_Name | Name of the ad campaign |
-| Ad_ID | Unique identifier for each ad |
-| Ad_Set | Ad grouping or targeting strategy |
-| Impressions | Number of times an ad was displayed |
-| Reach | Number of unique users reached |
-| Clicks | Total number of clicks received |
-| Spend | Total ad spend (in INR ₹) |
-| Conversions | Number of actions taken after clicking the ad |
-| CTR (%) | Click-Through Rate |
-| CPC (₹) | Cost Per Click |
-| ROI (%) | Return on Investment |
+|--------------|-------------|
+| ad_id | Unique identifier for each ad |
+| campaign_id | Internal campaign reference |
+| fb_campaign_id | Facebook campaign reference |
+| age | Age group targeted |
+| gender | Gender targeted |
+| interest1, interest2, interest3 | Audience interests (numeric codes) |
+| impressions | Number of ad impressions |
+| clicks | Total number of clicks |
+| spent | Total ad spend (₹) |
+| total_conversion | Total conversions |
+| approved_conversion | Approved conversions |
 
 ---
 
-## 🧹 Step 1: Data Cleaning (Excel / Power BI)
-- Removed duplicate and blank records  
-- Checked for missing values in key metrics (`Clicks`, `Spend`, `Impressions`)  
-- Ensured date fields are formatted correctly  
-- Created calculated columns:
-  - `CTR = (Clicks / Impressions) * 100`
-  - `CPC = Spend / Clicks`
-  - `ROI = (Revenue - Spend) / Spend * 100`
-- Filtered out zero or invalid spend entries  
+## 🧹 Step 1: Data Cleaning & Preparation (in Power BI)
+- Removed null and duplicate rows.  
+- Ensured correct data types (`Date`, `Number`, `Text`).  
+- Created calculated measures for:
+  - **CTR (%)** = `Clicks / Impressions`
+  - **CPC (₹)** = `Spend / Clicks`
+  - **ROI (%)** = `(Approved Conversions * 1000 - Spend) / Spend`
+  - **Total Spend**, **Total Clicks**, **Approved Conversions**
 
 ---
 
 ## 📊 Step 2: Data Analysis
 Analyzed:
-- **Top Campaigns by ROI and Engagement**  
-- **CTR Trends across Campaigns and Time Periods**  
-- **Spend vs Conversions Correlation**  
-- **Performance by Audience Segment or Ad Set**  
-- **Click Distribution by Device or Region (if available)**  
+- **Campaign-Level Performance** (Spend, ROI, CTR)
+- **CTR Trend Over Time**
+- **Spend Distribution Across Campaigns**
+- **Clicks vs Conversions Correlation**
+- **Audience Engagement by Age & Gender**
 
 ---
 
 ## 🖥️ Step 3: Dashboard Development (Power BI)
-Included:
-- **KPI Cards:** Total Spend, Total Clicks, CTR (%), CPC, ROI (%)  
-- **Bar Chart:** Campaigns by Spend and ROI  
-- **Line Chart:** CTR Trend Over Time  
-- **Pie Chart:** Spend Distribution by Campaign  
-- **Scatter Plot:** Clicks vs Conversions  
-- **Filters/Slicers:** Campaign Name, Date, Device, or Ad Set  
+The dashboard includes the following key visuals:
+
+| Visualization | Description |
+|----------------|-------------|
+| **KPI Cards** | Total Spend, Total Clicks, CTR (%), CPC (₹), ROI (%) |
+| **Line Chart** | CTR (%) Trend Over Time |
+| **Pie Chart** | Spend Distribution by Campaign |
+| **Combo Chart** | Campaign Spend vs ROI (%) |
+| **Scatter Plot** | Clicks vs Approved Conversions |
+| **Clustered Bar Chart** | CTR (%) by Age & Gender |
+| **Filters** | Campaign ID selection (916, 936, 1178) |
 
 ---
 
-## 💡 Step 4: Insights & Recommendations
-**Insights:**
-- Campaigns with moderate spend and creative visuals achieved higher CTRs.  
-- ROI was strongest in campaigns targeting younger demographics (18–25).  
-- Some ads with high impressions had low CTR, indicating creative fatigue.  
+## 💡 Step 4: Key Insights & Recommendations
 
-**Recommendations:**
-- Increase budget for campaigns with high ROI.  
-- Test new creatives for ads with low CTR.  
-- Reallocate spend toward high-engagement age groups and regions.  
-- Optimize posting times based on engagement trends.  
+### 🔍 **Insights**
+- Campaign **1178** contributes ~85% of total spend but shows declining CTR.  
+- CTR (%) trend gradually decreases over time, indicating ad fatigue.  
+- **Female audiences** show slightly higher CTR than males across all age groups.  
+- Highest ROI observed for campaigns with moderate spend and balanced conversion rates.
 
----
-
-## 🧰 Tools Used
-- **Microsoft Power BI** – Dashboard creation & visualization  
-- **Excel** – Data cleaning & calculations  
-- **Power Query** – Data transformation  
-- **Canva (Optional)** – For ad creative mockups  
+### 💬 **Recommendations**
+- Refresh ad creatives for high-spend campaigns to avoid audience fatigue.  
+- Reallocate budget to better-performing age & gender segments.  
+- Experiment with A/B testing on lower CTR campaigns.  
+- Prioritize audience segments (35–49 years) showing consistent engagement.
 
 ---
 
 ## 🧠 Skills Gained
-- Marketing Data Analysis  
-- Campaign Performance Tracking  
-- DAX Calculations for Marketing KPIs  
-- Data Visualization & Storytelling  
-- Power BI Dashboard Development  
+- Data Cleaning & Transformation in Power BI  
+- Marketing Analytics (CTR, CPC, ROI, Conversion Rate)  
+- Visual Analytics & KPI Design  
+- Business Storytelling with Dashboards  
+- Campaign Performance Evaluation  
 
 ---
 
-## 🗂️ Project Structure
-```text
-SocialMediaCampaignPerformance/
+Facebook-Ads-Performance-Dashboard/
 ├── README.md
 ├── data/
-│   └── facebook_ads_performance.csv
+│ └── facebook_ads.csv
 ├── analysis/
-│   └── cleaned_data.xlsx
+│ └── cleaned_data.xlsx
 ├── reports/
-│   └── PowerBI_Dashboard.pbix
+│ └── Facebook_Ads_Dashboard.pbix
 └── screenshots/
-    └── dashboard_preview.png
+└── dashboard_preview.png
+
+
+---
+
+## 📸 Dashboard Preview
+![Dashboard Preview](https://github.com/Poornima044/FUTURE_DS_02/blob/main/screenshots/dashboard_preview.png)
+
+---
+
+## 📬 Contact / Author
+**Poornima**  
+🌐 [LinkedIn](linkedin.com/in/contact-poornima) | 🧠 Aspiring Data Analyst | 📊 Power BI Enthusiast  
+📍 *Task 2 – Data Science & Analytics Internship @ Future Interns*  
+
+
+
+
+## 📂 Project Structure
